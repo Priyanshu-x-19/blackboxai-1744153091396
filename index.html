@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age & Gender Detection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="w-full max-w-4xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="p-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Age & Gender Detection</h1>
+            <p class="text-gray-600 mb-6">Real-time face detection using your webcam</p>
+            
+            <div class="relative">
+                <video id="video" width="720" height="560" autoplay muted class="rounded-lg border border-gray-200 w-full"></video>
+                <canvas id="canvas" class="absolute top-0 left-0"></canvas>
+            </div>
+            
+            <div class="mt-6 grid grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Age</h2>
+                    <div id="age" class="text-2xl font-bold text-blue-600">--</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h2 class="text-lg font-semibold text-gray-700 mb-2">Gender</h2>
+                    <div id="gender" class="text-2xl font-bold text-pink-600">--</div>
+                </div>
+            </div>
+            
+            <div class="mt-6 flex justify-center">
+                <button id="startBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition">
+                    <i class="fas fa-play mr-2"></i> Start Detection
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
